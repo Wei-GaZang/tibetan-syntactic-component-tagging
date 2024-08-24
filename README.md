@@ -10,6 +10,7 @@
 * [5. Data Format](#Data-Format)
 * [6. Performance](#Performance)
 * [7. Add Handcrafted Features](#Add-Handcrafted-Features)
+* [8.Acknowledgements](#Acknowledgements)
 
 
 ## Introduction
@@ -86,5 +87,7 @@ feature=[p] emb_size=20 emb_dir=%your_pretrained_POS_embedding
 feature=[c] emb_size=20 emb_dir=%your_pretrained_Cap_embedding
 ```
 
+## Acknowledgements
+Thanks to the [NCRF++](https://github.com/jiesutd/NCRFpp) project for sharing the basic code.
 
 
