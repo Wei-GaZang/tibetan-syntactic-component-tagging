@@ -82,8 +82,8 @@ NCRF++ has integrated several SOTA neural characrter sequence feature extractors
 User can configure each feature in configuration file by using. In this project, we use `[p]` to represent the characteristics of Tibetan parts of speech, and `[c]` to represent the characteristics of Tibetan case particles.
 
 ```Python
-feature=[POS] emb_size=20 emb_dir=%your_pretrained_POS_embedding
-feature=[Cap] emb_size=20 emb_dir=%your_pretrained_Cap_embedding
+feature=[p] emb_size=20 emb_dir=%your_pretrained_POS_embedding
+feature=[c] emb_size=20 emb_dir=%your_pretrained_Cap_embedding
 ```
 
 
