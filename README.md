@@ -82,17 +82,17 @@ By default, `LSTM` is bidirectional LSTM.
 |token|model|A|P|R|F_1
 |---|--------- | --- | --- | ------  | ------
 |syllables|GRU+CRF|79.06|75.03|75.23|75.13
-	|CNN+CRF|78.92|75.21|75.34|75.28
-	|BiLSTM+CRF|79.14|75.53|75.66|75.60
+|	|CNN+CRF|78.92|75.21|75.34|75.28
+|	|BiLSTM+CRF|79.14|75.53|75.66|75.60
 |word|GRU+CRF|83.80|79.52|79.36|79.44
-	|CNN+CRF|83.77|79.74|79.21|79.47
-	|BiLSTM+CRF|83.86|79.86|80.21|80.03
+|	|CNN+CRF|83.77|79.74|79.21|79.47
+|	|BiLSTM+CRF|83.86|79.86|80.21|80.03
 |word+POS|GRU+CRF|85.16|82.05|82.35|82.20
-	|CNN+CRF|85.35|82.38|81.98|82.18
-	|BiLSTM+CRF|85.37|82.35|82.49|82.42
+|	|CNN+CRF|85.35|82.38|81.98|82.18
+|	|BiLSTM+CRF|85.37|82.35|82.49|82.42
 |Multi-featured token|WPCc-GRU+CRF|89.91|86.57|87.01|86.79
-	|WPCc-CNN+CRF|89.41|86.26|86.40|86.33
-	|WPCc_BiLSTM+CRF|90.67|87.00|87.33|87.16
+|	|WPCc-CNN+CRF|89.41|86.26|86.40|86.33
+|	|WPCc_BiLSTM+CRF|90.67|87.00|87.33|87.16
 
 
 We have compared twelve neural sequence labeling models (`{charLSTM, charCNN, None} x {wordLSTM, wordCNN} x {softmax, CRF}`) on three benchmarks (POS, Chunking, NER) under statistical experiments, detail results and comparisons can be found in our COLING 2018 paper [Design Challenges and Misconceptions in Neural Sequence Labeling](https://arxiv.org/abs/1806.04470).
