@@ -1,7 +1,6 @@
-![NCRF++ Logo](https://github.com/jiesutd/NCRFpp/blob/master/readme/logo.png)
 
 
-# NCRF++: An Open-source Neural Sequence Labeling Toolkit
+# Tibetan Syntactic Component Labeling by Integrating Case Sequence Knowledge
 
 
 * [1. Introduction](#Introduction)
@@ -21,19 +20,9 @@
 
 ## Introduction
 
-Sequence labeling models are quite popular in many NLP tasks, such as Named Entity Recognition (NER), part-of-speech (POS) tagging and word segmentation. State-of-the-art sequence labeling models mostly utilize the CRF structure with input word features. LSTM (or bidirectional LSTM) is a popular deep learning based feature extractor in sequence labeling task. And CNN can also be used due to faster computation. Besides, features within word are also useful to represent word, which can be captured by character LSTM or character CNN structure or human-defined neural features.
+Against the backdrop of Large Language Models, the syntactic parsing of low-resource languages like Tibetan remains a vital research area in language comprehension. It holds significance in constructing large datasets and understanding semantics, including tasks like data alignment in large language models, building knowledge graphs, and facilitating automatic question answering.
+Tibetan syntactic analysis has been extensively studied in linguistics, leading to the development of several research paradigms for syntactic parsing. Commonly employed paradigms include deep syntactic parsing based on phrase structure [1–8] and Dependency Parsing [10–22] in the field of natural language processing. Deep syntactic parsing, also known as complete syntactic analysis, aims to uncover the connections between the constituent parts of a sentence and analyze all syntactic information within it. However, creating such datasets is labor-intensive and challenging to scale. Moreover, this paradigm performs suboptimally, especially in large-scale deep syntactic parsing tasks, and is prone to analysis errors when confronted with complex sentence patterns due to the loss of span information and syntactic identifiers on the spans. To address this challenge, we propose that integrating the shallow analysis method of syntactic constituent annotation with the morphology markers of Tibetan Case grammar  can offer an effective approach to deep syntactic parsing. This method will not only help rectify the current limitations of deep syntactic parsing by facilitating the identification of various syntactic constituents and their structural information but also mitigate the rise in complexity of analysis with increasingly complex sentences.
 
-NCRF++ is a PyTorch based framework with flexiable choices of input features and output structures. The design of neural sequence labeling models with NCRF++ is fully configurable through a configuration file, which does not require any code work. NCRF++ can be regarded as a neural network version of [CRF++](http://taku910.github.io/crfpp/), which is a famous statistical CRF framework. 
-
-This framework has been accepted by [ACL 2018](https://arxiv.org/abs/1806.05626) as demonstration paper. And the detailed experiment report and analysis using NCRF++ has been accepted at [COLING 2018](https://arxiv.org/abs/1806.04470) as the best paper.
-
-NCRF++ supports different structure combinations of on three levels: character sequence representation, word sequence representation and inference layer.
-
-* Character sequence representation: character LSTM, character GRU, character CNN and handcrafted word features.
-* Word sequence representation: word LSTM, word GRU, word CNN.
-* Inference layer: Softmax, CRF.
-
-Welcome to star this repository!
 
 ## Requirement
 
