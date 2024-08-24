@@ -10,13 +10,7 @@
 * [5. Data Format](#Data-Format)
 * [6. Performance](#Performance)
 * [7. Add Handcrafted Features](#Add-Handcrafted-Features)
-* [8. Speed](#Speed)
-* [9. N best Decoding](#N-best-Decoding)
-* [10. Reproduce Paper Results and Hyperparameter Tuning](#Reproduce-Paper-Results-and-Hyperparameter-Tuning)
-* [11. Report Issue or Problem](#Report-Issue-or-Problem)
-* [12. Cite](#Cite)
-* [13. Future Plan](#Future-Plan)
-* [13. Update](#Update)
+
 
 ## Introduction
 
