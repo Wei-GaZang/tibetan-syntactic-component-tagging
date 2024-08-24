@@ -57,7 +57,7 @@ The configuration file controls the network structure, I/O, training setting and
 
 NCRF++ is designed in three layers (shown below): character sequence layer; word sequence layer and inference layer. By using the configuration file, most of the state-of-the-art models can be easily replicated ***without coding***. On the other hand, users can extend each layer by designing their own modules (for example, they may want to design their own neural structures other than CNN/LSTM/GRU). Our layer-wised design makes the module extension convenient, the instruction of module extension can be found [here](readme/Extension.md).
 
-![alt text](readme/architecture.png "Layer-size design")
+![alt text](readme/model.png "Layer-size design")
 
 
 ## Data Format
@@ -71,11 +71,7 @@ NCRF++ is designed in three layers (shown below): character sequence layer; word
 
 ## Performance
 
-Results on CONLL 2003 English NER task are better or comparable with SOTA results with the same structures. 
 
-CharLSTM+WordLSTM+CRF: 91.20 vs 90.94 of [Lample .etc, NAACL16](http://www.aclweb.org/anthology/N/N16/N16-1030.pdf);
-
-CharCNN+WordLSTM+CRF:  91.35 vs 91.21 of [Ma .etc, ACL16](http://www.aclweb.org/anthology/P/P16/P16-1101.pdf).   
 
 By default, `LSTM` is bidirectional LSTM.    
 
@@ -101,11 +97,5 @@ feature=[Cap] emb_size=20 emb_dir=%your_pretrained_Cap_embedding
 
 Feature without pretrained embedding will be randomly initialized.
 
-
-## Speed
-
-NCRF++ is implemented using fully batched calculation, making it quite effcient on both model training and decoding. With the help of GPU (Nvidia GTX 1080) and large batch size, LSTMCRF model built with NCRF++ can reach 1000 sents/s and 2000sents/s on training and decoding status, respectively.
-
-![alt text](readme/speed.png "System speed on NER data")
 
 
