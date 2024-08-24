@@ -5,7 +5,6 @@
 
 * [1. Introduction](#Introduction)
 * [2. Requirement](#Requirement)
-* [3. Advantages](#Advantages)
 * [4. Usage](#Usage)
 * [5. Data Format](#Data-Format)
 * [6. Performance](#Performance)
@@ -24,15 +23,6 @@ Tibetan syntactic analysis has been extensively studied in linguistics, leading 
 	PyTorch: 1.0 
 
 [PyTorch 0.3 compatible version is here.](https://github.com/jiesutd/NCRFpp/tree/PyTorch0.3)
-
-
-## Advantages
-
-* Fully configurable: all the neural model structures can be set with a configuration file.
-* State-of-the-art system performance: models build on NCRF++ can give comparable or better results compared with state-of-the-art models.
-* Flexible with features: user can define their own features and pretrained feature embeddings.
-* Fast running speed: NCRF++ utilizes fully batched operations, making the system efficient with the help of GPU (>1000sent/s for training and >2000sents/s for decoding).
-* N best output: NCRF++ support `nbest` decoding (with their probabilities).
 
 
 ## Usage
@@ -57,27 +47,14 @@ NCRF++ is designed in three layers (shown below): character sequence layer; word
 ## Data Format
 
 * You can refer the data format in [sample_data](sample_data). 
-* NCRF++ supports both BIO and BIOES(BMES) tag scheme.  
-* Notice that IOB format (***different*** from BIO) is currently not supported, because this tag scheme is old and works worse than other schemes [Reimers and Gurevych, 2017](https://arxiv.org/pdf/1707.06799.pdf). 
-* The difference among these three tag schemes is explained in this [paper](https://arxiv.org/pdf/1707.06799.pdf).
-* I have written a [script](utils/tagSchemeConverter.py) which converts the tag scheme among IOB/BIO/BIOES. Welcome to have a try. 
+* The NCRF++ labeling scheme is retained, and BIO and BIOS (BMES) labeling schemes are supported. 
+* I wrote a  [script](utils/Tibetan_tagtoBIOES.py)  that converts annotated data in BRAT into an IOB/BIO/BIOES labeling scheme.
+* the paper preprocesses data using four different primitives: syllable, word, “word+POS,” and multi-feature token. Table 4 illustrates the data annotation format of the example sentence “[ བདག་_rr ]sub [ གིས་_bo ]bo [ ལས་བྱ་_nn ]vob [ བྲིས_vt ]hed [ །_ww ]ww” (I wrote the homework) with different primitives. Here, “[p]” signifies lexical tokenization, and “[c]” represents Case sequence to the syntactic constituent constraint information.
+![alt text](readme/data2.jpg "Layer-size design")
+
 
 
 ## Performance
-
-
-
-By default, `LSTM` is bidirectional LSTM.    
-
-|ID| Model | Nochar | CharLSTM |CharCNN   
-|---|--------- | --- | --- | ------    
-|1| WordLSTM | 88.57 | 90.84 | 90.73  
-|2| WordLSTM+CRF | 89.45 | **91.20** | **91.35** 
-|3| WordCNN |  88.56| 90.46 | 90.30  
-|4| WordCNN+CRF |  88.90 | 90.70 | 90.43  
-
-
-
 
 |token|model|A|P|R|F_1
 |---|--------- | --- | --- | ------  | ------
@@ -94,9 +71,6 @@ By default, `LSTM` is bidirectional LSTM.
 |	|WPCc-CNN+CRF|89.41|86.26|86.40|86.33
 |	|WPCc_BiLSTM+CRF|90.67|87.00|87.33|87.16
 
-
-We have compared twelve neural sequence labeling models (`{charLSTM, charCNN, None} x {wordLSTM, wordCNN} x {softmax, CRF}`) on three benchmarks (POS, Chunking, NER) under statistical experiments, detail results and comparisons can be found in our COLING 2018 paper [Design Challenges and Misconceptions in Neural Sequence Labeling](https://arxiv.org/abs/1806.04470).
- 
 
 ## Add Handcrafted Features
 
